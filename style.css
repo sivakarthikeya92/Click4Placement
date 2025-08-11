@@ -1,0 +1,310 @@
+
+/* Reset and base */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c1e61;
+    padding: 15px 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav .logo {
+    color: #f9f9f9;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    user-select: none;
+}
+nav .logo span {
+    color: #fbc531;
+}
+nav a {
+    color: #f9f9f9;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fbc531;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+nav a:hover {
+    color: #fbc531;
+}
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    animation: fadeInUp 1s ease forwards;
+}
+.carousel-inner {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+.carousel-item {
+    min-width: 100%;
+    user-select: none;
+}
+.carousel-item img {
+    width: 100%;
+    display: block;
+    border-radius: 18px;
+    pointer-events: none;
+}
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    padding: 14px 18px;
+    font-size: 28px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    transition: background 0.3s ease;
+    user-select: none;
+    z-index: 10;
+}
+.carousel-control:hover {
+    background: rgba(0,0,0,0.7);
+}
+.carousel-control.prev {
+    left: 20px;
+}
+.carousel-control.next {
+    right: 20px;
+}
+
+/* Landing Section */
+.landing {
+    background: rgba(255, 255, 255, 0.9);
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 50px 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.2s ease forwards;
+}
+.landing h1 {
+    font-size: 42px;
+    color: #2c1e61;
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+}
+.landing p {
+    font-size: 20px;
+    color: #5a4a8e;
+    margin-bottom: 25px;
+}
+.cta-btn {
+    background: #fbc531;
+    color: #2c1e61;
+    padding: 14px 30px;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 8px 15px rgba(251, 197, 49, 0.5);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.cta-btn:hover {
+    background: #f9b700;
+    box-shadow: 0 10px 20px rgba(249, 183, 0, 0.7);
+    transform: translateY(-3px);
+}
+
+/* Job Cards */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 40px 0 25px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+.job-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 20px 50px;
+    gap: 25px;
+}
+.job-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 300px;
+    padding: 25px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+}
+.job-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+.job-card h2 {
+    font-size: 24px;
+    color: #2c1e61;
+    margin-bottom: 10px;
+}
+.job-card p {
+    color: #666;
+    font-size: 16px;
+    margin: 6px 0;
+}
+.details-btn, .apply-btn {
+    margin-top: 15px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 8px 15px rgba(44, 30, 97, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    user-select: none;
+}
+.details-btn {
+    background: #2c1e61;
+    color: #fbc531;
+    box-shadow: 0 8px 15px rgba(251, 197, 49, 0.3);
+}
+.details-btn:hover {
+    background: #432e8b;
+    box-shadow: 0 10px 20px rgba(67, 46, 139, 0.6);
+    transform: translateY(-3px);
+}
+.apply-btn {
+    background: #fbc531;
+    color: #2c1e61;
+}
+.apply-btn:hover {
+    background: #f9b700;
+    box-shadow: 0 10px 20px rgba(249, 183, 0, 0.7);
+    transform: translateY(-3px);
+}
+
+/* Job Details Section */
+.job-details-section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto 80px;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Contact Page */
+header h1 {
+    text-align: center;
+    margin: 60px 0 30px;
+    color: #fff;
+    font-weight: 700;
+}
+section p {
+    text-align: center;
+    color: #ddd;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .job-card {
+        width: 45%;
+    }
+    .landing h1 {
+        font-size: 36px;
+    }
+    .landing p {
+        font-size: 16px;
+    }
+}
+@media (max-width: 767px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+    nav div {
+        width: 100%;
+        margin-top: 12px;
+    }
+    nav a {
+        margin: 10px 15px 10px 0;
+        font-size: 16px;
+    }
+    .landing {
+        padding: 30px 20px;
+        border-radius: 10px;
+    }
+    .landing h1 {
+        font-size: 28px;
+    }
+    .landing p {
+        font-size: 14px;
+    }
+    .job-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+    .job-card {
+        width: 90%;
+    }
+    .carousel-control {
+        padding: 8px 12px;
+        font-size: 22px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {opacity: 0; transform: translateY(20px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInUp {
+    0% {opacity: 0; transform: translateY(40px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
